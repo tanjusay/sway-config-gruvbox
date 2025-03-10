@@ -1,0 +1,94 @@
+/* General Reset */
+* {
+    background-image: none;
+}
+
+window {
+    background-color: rgba(17, 17, 27, 0); /* Transparent window background */
+}
+
+button {
+    margin: 5px;
+    padding: 5px 15px; /* Reduced padding to make buttons smaller */
+    color: #ebdbb2; /* Gruvbox white text */
+    font-size: 1.8rem; /* Smaller font size */
+    background-color: #282828; /* Gruvbox black background */
+    outline-style: none;
+    border: 2px solid transparent; /* Default border for button */
+    background-repeat: no-repeat;
+    font-weight: bold;
+    background-position: center;
+    background-size: 18%;
+    border-radius: 50px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease;
+}
+
+/* Hover, Focus, and Active states for buttons */
+button:focus,
+button:active,
+button:hover {
+    background-color: #83a598; /* Gruvbox bright blue for hover/focus */
+    color: #ffffff; /* Dark background for the text */
+    background-size: 23%;
+    border: 2px solid #cccccc; /* Highlight border on hover/focus */
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
+}
+
+#lock,
+#logout,
+#suspend,
+#hibernate,
+#shutdown,
+#reboot {
+    opacity: 0.9;
+}
+
+/* Button background images for specific actions */
+#lock {
+    background-image:
+        url("/usr/share/wlogout/icons/lock.png"),
+        url("/usr/local/share/wlogout/icons/lock.png");
+    background-color: #d79921; /* Gruvbox yellow */
+}
+
+#logout {
+    background-image:
+        url("/usr/share/wlogout/icons/logout.png"),
+        url("/usr/local/share/wlogout/icons/logout.png");
+    background-color: #cc241d; /* Gruvbox red */
+}
+
+#suspend {
+    background-image:
+        url("/usr/share/wlogout/icons/suspend.png"),
+        url("/usr/local/share/wlogout/icons/suspend.png");
+    background-color: #689d6a; /* Gruvbox aqua */
+}
+
+#hibernate {
+    background-image:
+        url("/usr/share/wlogout/icons/hibernate.png"),
+        url("/usr/local/share/wlogout/icons/hibernate.png");
+    background-color: #b16286; /* Gruvbox purple */
+}
+
+#shutdown {
+    background-image:
+        url("/usr/share/wlogout/icons/shutdown.png"),
+        url("/usr/local/share/wlogout/icons/shutdown.png");
+    background-color: #fb4934; /* Gruvbox bright red */
+}
+
+#reboot {
+    background-image:
+        url("/usr/share/wlogout/icons/reboot.png"),
+        url("/usr/local/share/wlogout/icons/reboot.png");
+    background-color: #458588; /* Gruvbox blue */
+}

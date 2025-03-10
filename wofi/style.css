@@ -1,0 +1,97 @@
+@define-color base00 #282828; /* Gruvbox Dark0 */
+@define-color base01 #3c3836; /* Gruvbox Dark1 */
+@define-color base02 #504945; /* Gruvbox Dark2 */
+@define-color base03 #665c54; /* Gruvbox Dark3 */
+@define-color base04 #bdae93; /* Gruvbox Light0 */
+@define-color base05 #d5c4a1; /* Gruvbox Light1 */
+@define-color base06 #ebdbb2; /* Gruvbox Light2 */
+@define-color base07 #fbf1c7; /* Gruvbox Light3 */
+@define-color base08 #9d0006; /* Gruvbox Red */
+@define-color base09 #d65d0e; /* Gruvbox Orange */
+@define-color base0A #b8a000; /* Gruvbox Yellow */
+@define-color base0B #79740e; /* Gruvbox Green */
+@define-color base0C #8f3f2f; /* Gruvbox Aqua */
+@define-color base0D #458588; /* Gruvbox Blue */
+@define-color base0E #b16286; /* Gruvbox Purple */
+@define-color base0F #d79921; /* Gruvbox Brown */
+@define-color baseG #32302f; /* Gruvbox Dark4 */
+@define-color baseH #1d2021; /* Gruvbox Dark5 */
+@define-color baseI #928374; /* Gruvbox Grey */
+
+@define-color bg-light #32302f;
+
+#entry {
+    border-radius: 6px; /* Added border-radius */
+    padding: 5px;
+    margin: 1px 5px 1px 5px;
+    background-color: alpha(@base02, 0.1);
+    color: @base0B;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#entry:selected {
+    background-color: alpha(@base0D, 0.6);
+    padding: 5px;
+    color: @base0B;
+}
+
+#text:selected {
+    color: white;
+}
+
+#window {
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    background-color: alpha(@base01, 0.9);
+    font-family: Hack, monospace;
+    font-size: 14px;
+    border-radius: 10px; /* Added border-radius */
+}
+
+#input {
+    border: none;
+    background-color: alpha(@base02, 0.1);
+    border-radius: 10px; /* Added border-radius */
+    margin: 5px 5px 5px 5px;
+    padding: 8px;
+    color: @base05;
+    font-weight: bold;
+}
+
+#input:focus {
+    outline: none; /* Removed blue border on focus */
+    box-shadow: none; /* Ensured no focus styles appear */
+}
+
+#inner-box {
+    border-radius: 10px;
+    margin: 5px;
+    padding-top: 5px;
+}
+
+#outer-box {
+    border-radius: 10px; /* Added border-radius */
+    padding: 5px;
+}
+
+#scroll {
+    background-color: @base02;
+    border-radius: 10px;
+    margin: 0px 5px 10px 5px;
+}
+
+#text {
+    color: @base04;
+    font-weight: bold;
+}
+
+#img {
+}
