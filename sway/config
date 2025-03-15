@@ -53,17 +53,18 @@ set $right l
 set $term kitty
 
 # Lock screen with background image
-exec swaylock -i /home/tanjusay/Downloads/fri.png --effect-blur 5x3 --effect-vignette 0.5:0.8
 
-bindsym $mod+shift+m exec swaylock -i /home/tanjusay/Downloads/fri.png
+exec swaylock
+
+bindsym $mod+shift+m exec swaylock
 
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # Recommends: rofi-wayland
-set $rofi_cmd rofi \
-        -terminal '$term'
+#set $rofi_cmd rofi \
+#        -terminal '$term'
 # Shows a combined list of the applications with desktop files and
 # executables from PATH.
 # TODO: add window with the next release of rofi-wayland
@@ -75,7 +76,7 @@ set $rofi_cmd rofi \
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg /home/tanjusay/Downloads/gamepad.png fill
+output * bg /home/tanjusay/Downloads/satellite.png fill
 #
 # Example configuration:
 #
@@ -87,16 +88,16 @@ output * bg /home/tanjusay/Downloads/gamepad.png fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# Start idle tracker
 exec swayidle -w \
 	timeout 600 'chayang -d10 && swaymsg "output * power off" && swaylock' \
 		resume 'swaymsg "output * power on"' \
 	before-sleep swaylock
+
+# Start idle tracker
+#exec swayidle -w \
+#	timeout 600 'chayang -d10 && swaymsg "output * power off" && swaylock' \
+#		resume 'swaymsg "output * power on"' \
+#	before-sleep swaylock -i /home/tanjusay/Downloads/satellite.png
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -147,7 +148,7 @@ bindgesture {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec kitty
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -157,6 +158,19 @@ bindgesture {
     #bindsym $mod+d exec pkill -x wofi; wofi --show run
     bindsym $mod+d exec wofi --show drun
     bindsym $mod+shift+w exec firefox
+
+    # Bind Mod+d to run wofi and focus it if it's already running
+
+# Check if wofi is running and only run it if not, otherwise focus it
+
+# Bind Mod+d to launch wofi, but only if it's not running
+
+bindsym $mod+space exec --no-startup-id \
+    pgrep -x "wofi" > /dev/null || wofi --show drun
+
+# Focus wofi window if it's already running
+# for_window [class="wofi --show drun"] focus
+
 
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -250,7 +264,7 @@ bindgesture {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -315,10 +329,10 @@ bindsym $mod+r mode "resize"
 
 
 # Gaps settings
-smart_gaps off
+smart_gaps on
 gaps {
-	inner 2
-	outer 2
+	inner 5
+	outer 5
 }
 # Border settings
 # normal = w/ titlebar, pixel = w/o titlebar, none = disable
