@@ -3,32 +3,38 @@
 	"position": "top",
 
 	"modules-left": [
-		"sway/mode",
+		"custom/arrow12",
 		"sway/workspaces",
+		"custom/arrow7",
 		"custom/arrow10",
+		"custom/arrow11",
 		"sway/window"
+	],
+	"modules-center": [
+		"clock#time"
 	],
 
 	"modules-right": [
-		"custom/arrow9",
-		"pulseaudio",
-		"custom/arrow8",
-		"network",
-		"custom/arrow7",
-		"memory",
-		"custom/arrow6",
-		"cpu",
-		"custom/arrow5",
-		"temperature",
-		"custom/arrow4",
-		"battery",
-		"custom/arrow3",
-		"sway/language",
-		"custom/arrow2",
+		//"custom/arrow9",
+		//"pulseaudio",
+		//"custom/arrow8",
+		//"network",
+		//"memory",
+		//"custom/arrow6",
+		//"cpu",
+		//"custom/arrow5",
+		//"temperature",
+		//"custom/arrow4",
+		//"battery",
+		//"custom/arrow3",
+		//"sway/language",
+		//"custom/arrow2",
 		//"tray",
+		"custom/firefox",
+		"sway/mode","custom",
 		"clock#date",
+		"custom/arrow7",
 		"custom/arrow1",
-		"clock#time"
 	],
 
 	// Modules
@@ -54,7 +60,12 @@
 		],
 		"tooltip": false
 	},
-
+    "custom/firefox": {
+        "exec": "echo ''",  // Use the Firefox logo from Nerd Fonts (alternative to using images)
+        "format": "{}",
+        "on-click": "firefox",  // Command to launch Firefox when clicked
+        "tooltip": "false"
+  },
 	"clock#time": {
 		"interval": 10,
 		"format": "{:%H:%M}",
@@ -63,7 +74,8 @@
 
 	"clock#date": {
 		"interval": 20,
-		"format": "{:%e %b %Y}",
+		"format": "{:%e %B %Y}",
+		"on-click": "gnome-calendar",
 		"tooltip": false
 		//"tooltip-format": "{:%e %B %Y}"
 	},
@@ -80,8 +92,8 @@
 	},
 
 	"sway/language": {
-		"format": " {}",
-		"min-length": 5,
+		"format": "{}",
+		"min-length": 3,
 		"on-click": "swaymsg 'input * xkb_switch_layout next'",
 		"tooltip": false
 	},
@@ -198,10 +210,19 @@
 		"tooltip": false
 	},
 
+	"custom/arrow11": {
+		"format": "|",
+		"tooltip": false
+	},
 	"custom/arrow10": {
+		"format": "||",
+		"tooltip": false
+	},
+	"custom/arrow12": {
 		"format": "",
 		"tooltip": false
-	}
+
+	},
 }
 
 
