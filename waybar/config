@@ -1,9 +1,12 @@
 {
 	"layer": "top",
 	"position": "top",
+	"margin-top": 8,
+    "margin-right": 8,
+    "margin-bottom": 0,
+    "margin-left": 8,
 
 	"modules-left": [
-		"custom/arrow12",
 		"sway/workspaces",
 		"custom/arrow7",
 		"custom/arrow10",
@@ -30,11 +33,11 @@
 		//"sway/language",
 		//"custom/arrow2",
 		//"tray",
-		"custom/firefox",
+		//"custom/firefox",
+		"network",
 		"sway/mode","custom",
 		"clock#date",
-		"custom/arrow7",
-		"custom/arrow1",
+
 	],
 
 	// Modules
@@ -111,9 +114,8 @@
 	"network": {
 		"interval": 5,
 		"format-wifi": "",
-		"format-ethernet": "{ifname}",
-		"format-disconnected": "No connection",
-		"format-alt": "{ipaddr}/{cidr}",
+		"format": "{ifname} {ipaddr}",
+        "on-click": "nm-connection-editor",
 		"tooltip": false
 	},
 
